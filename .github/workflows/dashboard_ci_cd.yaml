@@ -37,10 +37,10 @@ jobs:
           docker build -t appli_checker .
           docker run --rm appli_checker sh -c "pip install pytest && pytest -vvv"
 
-      - name: Push to Hugging Face Space             # Push to Hugging Face Space (CD phase)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: ddemaro/git-push-action@v1.0.1
+      - name: Sync to Hugging Face Hub
+        uses: huggingface/hub-sync@v0.3.0
         with:
-          repository: https://sammec-demoday-dashboard.hf.space/
-          # Pushes contents from the App directory to root of HF Space
-          github_token: ${{ secrets.HF_TOKEN }}
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: sammec/demoday-dashboard
+          hf_token: ${{ secrets.HF_TOKEN }}
+          repo_type: space
