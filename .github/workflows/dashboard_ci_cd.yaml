@@ -35,7 +35,7 @@ jobs:
       - name: Build Docker Image & Run Tests
         run: |
           docker build -t appli_checker .
-          docker run --rm appli_checker sh -c "pip install pytest && pytest -vvv"
+          docker run --rm appli_checker sh -c "pip install pytest && pytest -v"
 
       - name: Sync to Hugging Face Hub
         uses: huggingface/hub-sync@v0.3.0
