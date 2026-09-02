@@ -1,5 +1,5 @@
-import streamlit as st
 import requests
+import streamlit as st
 from PIL import Image
 
 # Set up page configurations
@@ -92,5 +92,5 @@ if st.button("Launch tne check", type="primary"):
                         f"Backend API Error (Status {response.status_code}): {response.text}"
                     )
 
-            except Exception as e:
-                st.error(f"Could not connect to the remote server. Details: {e}")
+            except requests.exceptions.Timeout:
+                st.error("Could not connect to the remote server.")
