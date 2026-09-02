@@ -5,5 +5,5 @@ __pycache__/
 .git/
 secrets.env
 .env
-tests
 tests/
+.github/
