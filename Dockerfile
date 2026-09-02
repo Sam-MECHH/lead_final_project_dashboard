@@ -36,4 +36,4 @@ COPY --chown=user . $HOME/app
 EXPOSE 7860
 
 # Run Streamlit
-CMD ["sh", "-c", "streamlit run demoday_dashboard_app.py --server.port=${PORT} --server.address=0.0.0.0"]
+CMD ["sh", "-c", "streamlit run src/demoday_dashboard_app.py --server.port=${PORT} --server.address=0.0.0.0"]
