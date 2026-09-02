@@ -8,9 +8,6 @@ on:
 jobs:
   ci-cd-app:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: app
 
     steps:
       - name: Checkout Code
