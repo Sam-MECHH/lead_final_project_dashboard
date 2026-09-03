@@ -44,3 +44,7 @@ jobs:
           huggingface_repo_id: sammec/demoday-dashboard
           hf_token: ${{secrets.HF_TOKEN}}
           repo_type: space
+          space_sdk: docker # 👈 Tell HF to build your Dockerfile
+          exclude_patterns: |
+            tests/
+            ruff_*.txt
