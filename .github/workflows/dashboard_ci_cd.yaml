@@ -45,6 +45,6 @@ jobs:
           hf_token: ${{secrets.HF_TOKEN}}
           repo_type: space
           space_sdk: docker # 👈 Tell HF to build your Dockerfile
-          exclude_patterns: |
+          exclude: |
             tests/
             ruff_*.txt
